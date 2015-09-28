@@ -907,9 +907,15 @@ if test "$GCC" = yes && test "$enable_function_sections" = yes ; then
 	;;
     esac
 fi
+
+########### LTO!!!
+CFLAGS=-emit-llvm
+###########
+
 AC_SUBST([LIBEVENT_GC_SECTIONS])
 
 AM_CONDITIONAL([INSTALL_LIBEVENT], [test "$enable_libevent_install" = "yes"])
 
 AC_CONFIG_FILES( [libevent.pc libevent_openssl.pc libevent_pthreads.pc] )
+
 AC_OUTPUT(Makefile)
